@@ -102,10 +102,14 @@ function TodoProvider(props) {
     // saveTasksList(newTasksList);
 
     
-    const taskToEdit = tasksList.filter(task => (task.title === title || task.body === body))
+    const taskToEdit = tasksList.filter(task => (task.title === title))
     console.log('EDIT TASKS', taskToEdit)
+    console.log('EDIT TASKS titlw', taskToEdit.map(title => title.title))
 
-    setTaskEdit(taskToEdit.title, taskToEdit.body);
+    const newTitle = taskToEdit.map(title => title.title);
+
+    setTaskEdit(newTitle);
+    console.log("setTaskEdit", setTaskEdit)
     setTaskTitleValue(title);
     setTaskBodyValue(body);
 
@@ -113,28 +117,31 @@ function TodoProvider(props) {
     setShowModal(false)
   }
 
+
   const onClickTaskUpdate = () => {
-    console.log('task update',);
+    const update = setTaskEdit(taskTitleValue);
+    console.log('task update', update);
 
     // const _taskList = [...tasksList];       
     //     // Get index
     //     const _index = _taskList.indexOf(taskEdit); 
     //     // Remplace
     //     _taskList.splice(_index,1,taskEdit);
-    //     // Set            
-    //     saveTasksList(_taskList);
+    //     console.log('task LIST', _taskList);
+        // Set            
+        // saveTasksList(_taskList);
 
   }
 
   // const editTask = (editedTask) => {
   //   console.log('edit task todocontext', editedTask.title)
-  //   const updatedTasksList = tasks.map((task) => {
-  //     if(task.id === editedTask.id) {
-  //       return editedTask;
-  //     } else {
-  //       return task;
-  //     };
-  //   });
+    // const updatedTasksList = tasks.map((task) => {
+    //   if(task.id === editedTask.id) {
+    //     return editedTask;
+    //   } else {
+    //     return task;
+    //   };
+    // });
   //   saveTasksList(updatedTasksList);
   // }
 
