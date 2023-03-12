@@ -1,0 +1,17 @@
+.save_button {
+  width: 80px;
+  margin-right: 1rem;
+  padding: 0.5rem;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  font-size: 1.4em;
+  /* background-color: #4398e8; */
+  /* background-color: #07db07; */
+  /* background-color: #33b1ff; */
+  background-color: #07e616;
+  color: #fff;
+  letter-spacing: 1.3px;
+  cursor: pointer;
+  opacity: 1;
+}

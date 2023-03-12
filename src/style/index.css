@@ -1,0 +1,79 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* margin: 0 auto; */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* padding-left: 1.5rem;
+  padding-right: 1.5rem; */
+  font-size: 62.5%;
+  /* background: #FAF8F7; */
+  /* background-color: #080f28; */
+  background-color: #121f3d;
+
+  /* background: #201E1C; */
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@media (min-width: 992px) {
+  #root {
+    margin: 0 auto;
+    max-width: 1140px;
+  }
+}
+
+/* @media (min-width: 768px) {
+  .cont {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .cont {
+    max-width: 1140px;
+    border: 2px solid yellowgreen;
+  }
+} */
+
+/* @media screen and (min-width: 768px) {
+  #root {
+    max-width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #root {
+    max-width: 100%;
+  }
+} */
+
+/* 
+secretos de universo. 
+
+3 afirmaciones
+6 repeticiones 
+9 por nueve minutos
+
+Soy un ser brillante y exitoso
+atraigo riqueza y prosperidad con facilidad y gracia
+vivo en armonia conmigo mismo y con el universo
+mi vida esta llena de amor felicidad y alegria
+mi salud es perfecto
+mi cuerpo es fuerto y lleno de energia
+me siento genial en todo momento
+
+
+
+
+*/

@@ -1,0 +1,18 @@
+.header_container {
+  display: flex;
+  align-items: center;
+  margin: 1.5rem 0 1rem 0;
+  /* color: #fff; */
+  color: #FAF8F7;
+
+}
+
+.header_logo {
+  width: 80px;
+  margin-right: 0.5rem;
+}
+
+.TodoCounter_title {
+  margin-top: 0.25rem;
+  line-height: 1;
+}

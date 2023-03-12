@@ -1,0 +1,103 @@
+.backdground {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0%;
+  left: 25%;
+  /* transform: translate(-50%, 0%); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .3s all ease-in-out;
+  /* background: rgba(0, 0, 0, 0.6); */
+  z-index: 1;
+  /* padding-left: 1.5rem;
+  padding-right: 1.5rem; */
+  /* background-image: url(../../assets/two.png); */
+  background-image: url(../../assets/three.png);
+  background-size: center;
+  background-repeat: no-repeat;
+  /* filter: blur(6px); */
+
+}
+.modal_wrapper {
+  /* position: relative; */
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .3s all ease-in-out;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  /* background-image: url(../../assets/list.png);
+  background-size: cover;
+  background-repeat: no-repeat; */
+  /* backdrop-filter: blur(6px); */
+
+  
+}
+
+.modal_content {
+  /* width: 100vw;
+  height: 100vh; */
+  /* position: fixed;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+  /* width: 100%; */
+  /* padding-left: 1.5rem;
+  padding-right: 1.5rem; */
+  width: 100%;
+  padding: 15px;
+  border-radius: 5px;
+  max-width: 475px;
+  min-width: 320px;
+  height: auto;
+  /* min-height: 300px;
+  max-height: 400px; */
+  /* background: rgb(236, 243, 243); */
+  background-color: #0c1633;
+
+  /* background-color: #24385b; */
+  color: #eff3f8;
+  margin: 0 auto;
+  box-shadow: rgba(100, 100, 11, 0.2) 0px 7px 29px 0px;
+  position: relative;
+  /* border: 5px solid rgb(218, 98, 29); */
+}
+
+.button_close {
+  position: absolute;
+  /* top: -0.8rem;
+  right: -0.8rem; */
+  top: 0.25rem;
+  right: 0.25rem;
+  border-radius: 50%;
+  /* border: 0.5px solid rgba(255, 255, 255, 0.5); */
+  /* background-color: rgba(255, 255, 255, 0.3); */
+  /* background-image: url(/src/assets/ios_close.png); */
+  background-image: url(/src/assets/close.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+}
+
+.button_close:hover {
+  /* border: 0.5px solid red; */
+  /* background-image: url(/src/assets/close.png); */
+  background-image: url(/src/assets/ios_close.png);
+  /* background-color: aliceblue; */
+  background-color: rgba(255, 255, 255, 0.3);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 28px;
+  height: 28px;
+  /* cursor: pointer; */
+}

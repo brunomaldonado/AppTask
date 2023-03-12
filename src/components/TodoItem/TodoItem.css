@@ -1,0 +1,292 @@
+li {
+  list-style-type: none;
+  width: 100%;
+  height: 100%;
+  /* border: 2px solid red; */
+  /* margin: 0.5rem 0 0.5rem 0; */
+}
+
+
+.container_item {
+  /* display: flex;
+  align-items: center; */
+  margin-bottom: 12px;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 55px auto 32px;
+  /* height:max-content; */
+  /* height:fit-content; */
+  /* background-image: url(../../assets/mil.jpeg);
+  background-size: 50%;
+  background-repeat: no-repeat;
+  max-width: 100%; */
+  /* height: max-content; */
+  /* border: 0.5px solid #F2F2F2; */
+  /* background: #FAF8F7; */
+  /* background-color: #282623; */
+  /* margin: 0.5rem 0 0.5rem 0; */
+  /* margin: 0.5rem 0 0.5rem 0; */
+  padding: 0.5rem 0 0.5rem 0;
+  border-radius: 10px;
+  position: relative;
+  white-space: pre-line;
+  background-color: #24385b;
+  color: #ccc;
+  /* color: #eff3f8; */
+  /* color: #080f28; */
+
+
+}
+
+.container_item--active {
+  text-decoration: line-through;
+  /* background-color: #848282; */
+}
+
+.container_check {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container_check img {
+  width: 48px;
+  cursor: pointer;
+}
+
+.Icon-check {
+  display: none;
+}
+.Icon-check--active {
+  background-image: url('../../assets/check12.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: block;
+  /* background-color: #4caf50; */
+}
+
+.container_description p:nth-child(1) {
+  font-weight: 600;
+  font-size: 1.6em;
+  line-height: 1.1;
+  margin-bottom: 0.25rem;
+  font-family: 'poppins';
+  color: #cbc8c8;
+
+}
+
+.container_description p:nth-child(2) {
+  font-size: 1.4em;
+  line-height: 1.2;
+  font-family: 'poppins';
+  color: #808080;
+}
+
+.container_buttons {
+  background: transparent;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-left: 0.5px solid #a5a5a5;
+  /* border-left: 1.5px solid #333; */
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.container_item:hover .container_buttons {
+  visibility: visible;
+}
+
+.container_buttons .edit{
+  background: transparent;
+  background-image: url('../../assets/edit.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 22px;
+  height: 22px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  
+  /* position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+}
+
+.container_buttons .edit::after{
+  content: '';
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /* border-bottom: 1px solid #a5a5a5; */
+}
+
+.container_buttons .trash{
+  background: transparent;
+  background-image: url('../../assets/trash.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 22px;
+  height: 22px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+
+  /* position: absolute;
+  bottom: -20%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+}
+
+.container_buttons .trash::after{
+  content: '';
+  width: 26px;
+  position: absolute;
+  top: 51%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-top: 1px solid #a5a5a5;
+  cursor: none;
+}
+
+/* .container_item:hover {
+  background: #33f4;
+} */
+
+/* .container_item:hover .container_buttons {
+  visibility: visible;
+  z-index: 99;
+} */
+
+/* .container_item .container_buttons {
+  position: absolute;
+  top: 0.2rem;
+  right: 0.2rem;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  background-image: url('../../assets/ios_close.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  display: none;
+}
+
+.container_item:hover {
+  background: #33f4;
+}
+.container_item:hover .container_buttons {
+  display: block;
+}
+.container_item .container_buttons:hover {
+  background-image: url('../../assets/close.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
+} */
+
+
+/*  ================================================================= Modal createPortal  =================================================================*/
+
+.modal_portal {
+  width: 100%;
+  padding: 15px;
+  border-radius: 5px;
+  max-width: 475px;
+  min-width: 320px;
+}
+
+.modal_title {
+  font-weight: bold;
+  font-family: 'Poppins';
+  font-size: 1.6em;
+  line-height: 1.2;
+  margin-bottom: 1.25rem;
+  color: #eff3f8;
+  /* margin: 0.5rem 0 0.5rem 0; */
+}
+
+.container_item__portal {
+  /* border: 2px solid red; */
+  margin-bottom: 1.25rem;
+}
+
+.button_delete {
+  width: 80px;
+  margin-right: 1rem;
+  padding: 0.5rem;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  font-size: 1.5em;
+  /* background-color: #dedddd; */
+  background-color: #f44336;
+  color: #fff;
+  letter-spacing: 1.3px;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.button_delete:hover {
+  background-color: rgb(175, 7, 7);
+  opacity: 1;
+}
+
+.button_cancel {
+  width: 80px;
+  margin-right: 1rem;
+  padding: 0.5rem;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  font-size: 1.4em;
+  /* background-color: #4398e8; */
+  background-color: #ccc;
+  color: #000;
+  letter-spacing: 1.3px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.button_cancel:hover {
+  /* background-color: rgb(0, 156, 0); */
+  background-color: #ccc;
+  opacity: 1;
+}
+
+.container_buttons__portal {
+  display: grid;
+  grid-template-rows: 1fr;
+}
+
+.container_item__portal .edit {
+  visibility: visible;
+}
+
+.container_item__portal .container_buttons {
+  visibility: visible;
+}
+
+/* @media (max-width: 767px) {
+  .container_item {
+    margin: 0.5rem 0 0.5rem 0;
+  }
+  .container_item__portal {
+    margin-bottom: 1.25rem;
+  }
+} */
