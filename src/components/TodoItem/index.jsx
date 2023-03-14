@@ -9,22 +9,22 @@ import { TodoContext } from '../../TodoContext';
 // const ItemProps =  { 
 //   title: title,
 //   body: body,
-//   deleteTask: false,
+//   handleDeleteClick: false,
 //   onComplete: false,
 // }
 
 function TodoItem(props) {
   // const [newTitle, setNewTitle] = React.useState(props.title)
-  // const [showModal, setShowModal] = React.useState(false);
+  const [showModal, setShowModal] = React.useState(false);
   // const [newTaskTitle, setNewTaskTitle] = React.useState(props.title);
   // const [newTaskDescription, setNewTaskDescription] = React.useState(props.body);
 
   const { 
-    toggleDeleteTask,
+    onClickDeleteTask,
     onClickEditTask,
-    showModal,
-    setShowModal,    
-  } = useContext(TodoContext)
+    // showModal,
+    // setShowModal,    
+  } = useContext(TodoContext) 
 
   function removeModal() {
     // console.log('remove modal')
@@ -42,19 +42,19 @@ function TodoItem(props) {
     };
   }
 
-  const deleteTask = () => {
+  const handleDeleteClick = () => {
     setShowModal(true)
     document.querySelector('.newTasks').style.zIndex = '-99';
   }
 
-  const handleDeleteClick = () => {
-    setShowModal(false)
-    // setDeleteTask(props.title);
-    // console.log("delete item", props.title)
-    // console.log("delete item", props.body)
-    toggleDeleteTask(props.title);
-    document.querySelector('.newTasks').style.zIndex = '99';
-  }
+  // const handleDeleteClick = () => {
+  //   setShowModal(false)
+  //   // setDeleteTask(props.title);
+  //   // console.log("delete item", props.title)
+  //   // console.log("delete item", props.body)
+  //   onClickDeleteTask(props.title);
+  //   document.querySelector('.newTasks').style.zIndex = '99';
+  // }
 
   const handleCancelClick = () => {
     setShowModal(false)
@@ -87,11 +87,12 @@ function TodoItem(props) {
           <button className='edit'
             // onClick={editTask}
             // onClick={() => editTask(props.title)}
-            onClick={() => onClickEditTask(props.title, props.body)}
+            onClick={() => onClickEditTask(props.title)}
           ></button>
           <button 
             className='trash'
-            onClick={deleteTask}
+            // onClick={() => onClickDeleteTask(props.title)}
+            onClick={handleDeleteClick}
           >
           </button>
         </div>
@@ -124,7 +125,7 @@ function TodoItem(props) {
                     className='container_buttons container_buttons__portal'
                   >
                     <button className='edit'
-                      onClick={() => onClickEditTask(props.title, props.body)}
+                      onClick={() => onClickEditTask(props.title)}
                     ></button>
                   </div>
                 </li> 
@@ -137,7 +138,7 @@ function TodoItem(props) {
                 </button>     
                 <button 
                   className='button_delete'
-                  onClick={handleDeleteClick}
+                  onClick={() => (onClickDeleteTask(props.title), setShowModal(false))}
                 >
                   Remove
                 </button>        

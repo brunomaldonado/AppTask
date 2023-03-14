@@ -7,6 +7,7 @@ const TodoContext = createContext();
 function TodoProvider(props) {
     // const [patito, setPatito] = useLocalStorage('PATITO_V1', "Angela");
   // const [tasksList, setTasksList] = useLocalStorage('TODOS_V1', []);
+
   const {
     item: tasksList,
     saveItem: saveTasksList,
@@ -16,11 +17,11 @@ function TodoProvider(props) {
 
   const [searchValue, setSearchValue] = useState('');
   const [openModal, setOpenModal] = useState(false)
-  const [showModal, setShowModal] = useState(false);
+  // const [showModal, setShowModal] = useState(false);
   const [openEditModal, setOpenEditModal] = useState(false)
   const [taskTitleValue, setTaskTitleValue] = useState('');
   const [taskBodyValue, setTaskBodyValue] = useState('');
-  const [taskEdit, setTaskEdit] = useState({title: '', body: '', completed: false});
+  // const [taskEdit, setTaskEdit] = useState({title: '', body: '', completed: false});
 
   const completedLists = tasksList.filter(task => !!task.completed).length;
   const totalTask = tasksList.length;
@@ -42,11 +43,11 @@ function TodoProvider(props) {
 
   const onChangeTaskTitle = ({target}) => {
     setTaskTitleValue(target.value);
-    console.log("onChangeTaskTitle", target.value);
+    // console.log("onChangeTaskTitle", target.value);
   }
   const onChangeTaskBody = ({target}) => {
     setTaskBodyValue(target.value);
-    console.log("onChangeTaskBody", target.value);
+    // console.log("onChangeTaskBody", target.value);
 
   }
 
@@ -60,76 +61,95 @@ function TodoProvider(props) {
     })
 
     saveTasksList(newTasksList);
-    // tasksList[taskListIndex] = {
-    //   title: tasksList[taskListIndex].title,
+    // tasksList[taskIndex] = {
+    //   title: tasksList[taskIndex].title,
     //   completed: true,
     // }
   }
 
-  const toggleCompleteTask = (title) => {
-    const taskListIndex = tasksList.findIndex(task => task.title === title);
+  // const addTasks = () => {
+  //   if(taskTitleValue) {
+  //     saveTasksList([...tasksList, {
+  //       title: taskTitleValue,
+  //       body: taskBodyValue,
+  //       completed: false,
+  //     }])
+  //     setTaskTitleValue('');
+  //   }
+  // }
+
+  const onClickCompleteTask = (title) => {
+    const taskIndex = tasksList.findIndex(task => task.title === title);
 
     const newTasksList = [...tasksList]
-    tasksList[taskListIndex].completed = true;
+    tasksList[taskIndex].completed = true;
 
     saveTasksList(newTasksList);
-    // tasksList[taskListIndex] = {
-    //   title: tasksList[taskListIndex].title,
+    // tasksList[taskIndex] = {
+    //   title: tasksList[taskIndex].title,
     //   completed: true,
     // }
   }
 
-  const toggleDeleteTask = (title) => {
-    // console.log('CONTEXT', title)
+  const onClickDeleteTask = (title) => {
+    console.log('CONTEXT', title)
     // alert("You whish to delete the task  " + title + "?")
-    const titleIndex = tasksList.findIndex(task => task.title === title);
+    const taskIndex = tasksList.findIndex(task => task.title === title);
     const newTasksList = [...tasksList];
-    newTasksList.splice(titleIndex, 1);
-    saveTasksList(newTasksList);
+    newTasksList.splice(taskIndex, 1);
+    // saveTasksList(newTasksList);
+    // setShowModal(true)
+    
   }
+
+
 
   const onClickEditTask = (title, body) => {
     document.querySelector('.newTasks').style.zIndex = '-99';
-    // console.log('edit task title', 
-    // `${title}
-    //   description ${body}
-    // `)
+    console.log('edit task title', 
+    `${title}
+      description ${body}
+    `)
 
     // const newTasksList = [...tasksList];
-    // const taskListIndex = tasksList.findIndex(task => task.title === title);
-    // newTasksList[taskListIndex].title = title.title;
-    // newTasksList[taskListIndex].body = body.body;
+    // const taskIndex = tasksList.findIndex(task => task.title === title);
+    // newTasksList[taskIndex].title = title.title;
+    // newTasksList[taskIndex].body = body.body;
     // saveTasksList(newTasksList);
 
     
-    const taskToEdit = tasksList.filter(task => (task.title === title))
-    console.log('EDIT TASKS', taskToEdit)
-    console.log('EDIT TASKS titlw', taskToEdit.map(title => title.title))
+    // const taskToEdit = tasksList.filter(task => (task.title === title))
+    // console.log('EDIT TASKS', taskToEdit)
+    // console.log('GET TASKS title', taskToEdit.map(title => title.title))
 
-    const newTitle = taskToEdit.map(title => title.title);
+    // const newTitle = taskToEdit.map(title => title.title);
+    // console.log('task title', taskToEdit[0].title)
 
-    setTaskEdit(newTitle);
-    console.log("setTaskEdit", setTaskEdit)
-    setTaskTitleValue(title);
-    setTaskBodyValue(body);
+    // setTaskEdit(taskToEdit[0])
+    // setTaskTitleValue(taskToEdit[0].title);
+    // setTaskBodyValue(taskToEdit[0].body);
 
     setOpenEditModal(true);
-    setShowModal(false)
+    // setShowModal(false)
   }
 
 
   const onClickTaskUpdate = () => {
-    const update = setTaskEdit(taskTitleValue);
-    console.log('task update', update);
+    // const update = setTaskEdit(prev => prev.title = taskTitleValue);
+    console.log('task update');
+    // setTaskEdit(prev => prev.title = taskTitleValue);
 
     // const _taskList = [...tasksList];       
-    //     // Get index
-    //     const _index = _taskList.indexOf(taskEdit); 
-    //     // Remplace
-    //     _taskList.splice(_index,1,taskEdit);
-    //     console.log('task LIST', _taskList);
-        // Set            
-        // saveTasksList(_taskList);
+    // // Get index
+    // const _index = _taskList.indexOf(taskEdit); 
+    // console.log("taskEdit", taskEdit);
+    // // Remplace
+    // _taskList.splice(_index, 1 ,taskEdit);
+    // console.log('task LIST update', _taskList);
+
+    // // saveTasksList(_taskList);
+    // setOpenEditModal(false);
+
 
   }
 
@@ -154,8 +174,8 @@ function TodoProvider(props) {
       searchValue,
       setSearchValue,
       searchedTaskList,
-      toggleCompleteTask,
-      toggleDeleteTask,
+      onClickCompleteTask,
+      onClickDeleteTask,
       openModal,
       setOpenModal,
       onChangeTaskTitle,
@@ -164,8 +184,8 @@ function TodoProvider(props) {
       openEditModal,
       setOpenEditModal,
       addTasks,
-      showModal,
-      setShowModal,
+      // showModal,
+      // setShowModal,
       taskTitleValue,
       setTaskTitleValue,
       taskBodyValue,

@@ -19,8 +19,8 @@ function Layout() {
     error, 
     loading, 
     searchedTaskList,
-    toggleCompleteTask,
-    toggleDeleteTask,
+    onClickCompleteTask,
+    onClickDeleteTask,
     openModal,
     setOpenModal,
     openEditModal,
@@ -55,8 +55,8 @@ function Layout() {
               title={task.title} 
               body={task.body} 
               completed={task.completed}
-              onComplete={() => toggleCompleteTask(task.title)}
-              onDelete={() => toggleDeleteTask(task.title)}
+              onComplete={() => onClickCompleteTask(task.title)}
+              onDelete={() => onClickDeleteTask(task.title)}
             />
           ))}
         </TodoList>
