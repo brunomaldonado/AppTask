@@ -99,7 +99,7 @@ li {
   border-left: 0.5px solid #a5a5a5;
   /* border-left: 1.5px solid #333; */
   visibility: hidden;
-  transition: all 0.3s ease-in-out;
+  /* transition: all 0.3s ease-in-out; */
 }
 
 .container_item:hover .container_buttons {
@@ -209,6 +209,7 @@ li {
   border-radius: 5px;
   max-width: 475px;
   min-width: 320px;
+
 }
 
 .modal_title {

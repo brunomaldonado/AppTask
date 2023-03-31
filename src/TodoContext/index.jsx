@@ -17,11 +17,11 @@ function TodoProvider(props) {
 
   const [searchValue, setSearchValue] = useState('');
   const [openModal, setOpenModal] = useState(false)
-  // const [showModal, setShowModal] = useState(false);
   const [openEditModal, setOpenEditModal] = useState(false)
   const [taskTitleValue, setTaskTitleValue] = useState('');
   const [taskBodyValue, setTaskBodyValue] = useState('');
-  // const [taskEdit, setTaskEdit] = useState({title: '', body: '', completed: false});
+  const [taskEdit, setTaskEdit] = useState({title: '', body: '', completed: false});
+  // const [taskEdit, setTaskEdit] = useState([]);
 
   const completedLists = tasksList.filter(task => !!task.completed).length;
   const totalTask = tasksList.length;
@@ -51,7 +51,8 @@ function TodoProvider(props) {
 
   }
 
-  const addTasks = (title, body, image) => {
+  const onClickAddTask = (title, body, image) => {
+    console.log("add task")
     const newTasksList = [...tasksList]
     newTasksList.push({
       image,
@@ -61,22 +62,7 @@ function TodoProvider(props) {
     })
 
     saveTasksList(newTasksList);
-    // tasksList[taskIndex] = {
-    //   title: tasksList[taskIndex].title,
-    //   completed: true,
-    // }
   }
-
-  // const addTasks = () => {
-  //   if(taskTitleValue) {
-  //     saveTasksList([...tasksList, {
-  //       title: taskTitleValue,
-  //       body: taskBodyValue,
-  //       completed: false,
-  //     }])
-  //     setTaskTitleValue('');
-  //   }
-  // }
 
   const onClickCompleteTask = (title) => {
     const taskIndex = tasksList.findIndex(task => task.title === title);
@@ -97,19 +83,16 @@ function TodoProvider(props) {
     const taskIndex = tasksList.findIndex(task => task.title === title);
     const newTasksList = [...tasksList];
     newTasksList.splice(taskIndex, 1);
-    // saveTasksList(newTasksList);
-    // setShowModal(true)
+    saveTasksList(newTasksList);
     
   }
 
-
-
   const onClickEditTask = (title, body) => {
     document.querySelector('.newTasks').style.zIndex = '-99';
-    console.log('edit task title', 
-    `${title}
-      description ${body}
-    `)
+    // console.log('edit task title', 
+    // `${title}
+    //   description ${body}
+    // `)
 
     // const newTasksList = [...tasksList];
     // const taskIndex = tasksList.findIndex(task => task.title === title);
@@ -118,38 +101,37 @@ function TodoProvider(props) {
     // saveTasksList(newTasksList);
 
     
-    // const taskToEdit = tasksList.filter(task => (task.title === title))
-    // console.log('EDIT TASKS', taskToEdit)
+    const taskToEdit = tasksList.filter(task => (task.title === title))
+    console.log('EDIT TASKS', taskToEdit)
     // console.log('GET TASKS title', taskToEdit.map(title => title.title))
 
     // const newTitle = taskToEdit.map(title => title.title);
     // console.log('task title', taskToEdit[0].title)
 
-    // setTaskEdit(taskToEdit[0])
-    // setTaskTitleValue(taskToEdit[0].title);
-    // setTaskBodyValue(taskToEdit[0].body);
+    setTaskEdit(taskToEdit[0])
+    setTaskTitleValue(taskToEdit[0].title);
+    setTaskBodyValue(taskToEdit[0].body);
 
     setOpenEditModal(true);
-    // setShowModal(false)
+    console.log('TASK LIST', tasksList);
   }
 
 
   const onClickTaskUpdate = () => {
-    // const update = setTaskEdit(prev => prev.title = taskTitleValue);
-    console.log('task update');
-    // setTaskEdit(prev => prev.title = taskTitleValue);
-
-    // const _taskList = [...tasksList];       
-    // // Get index
-    // const _index = _taskList.indexOf(taskEdit); 
-    // console.log("taskEdit", taskEdit);
-    // // Remplace
-    // _taskList.splice(_index, 1 ,taskEdit);
-    // console.log('task LIST update', _taskList);
-
-    // // saveTasksList(_taskList);
-    // setOpenEditModal(false);
-
+    // NEW TASK LIST
+    setTaskEdit((prev) => prev.title = taskTitleValue);
+    // setTaskEdit(prev => prev.body = taskBodyValue);
+    //COPY
+    const updateTask = [...tasksList];  
+    // Get index
+    const taskIndexOf = updateTask.indexOf(taskEdit); 
+    // Remplace
+    updateTask.splice(taskIndexOf,1,taskEdit);
+    //SET
+    // saveTasksList(updateTask);
+    console.log('update TASKS', updateTask)     
+     
+    setOpenEditModal(false);
 
   }
 
@@ -164,6 +146,8 @@ function TodoProvider(props) {
     // });
   //   saveTasksList(updatedTasksList);
   // }
+
+  // console.log('TASK LIST', tasksList);
 
   return (
     <TodoContext.Provider value={{
@@ -183,9 +167,7 @@ function TodoProvider(props) {
       onClickEditTask,
       openEditModal,
       setOpenEditModal,
-      addTasks,
-      // showModal,
-      // setShowModal,
+      onClickAddTask,
       taskTitleValue,
       setTaskTitleValue,
       taskBodyValue,

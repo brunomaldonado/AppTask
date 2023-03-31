@@ -26,10 +26,19 @@ code {
     monospace;
 }
 
+#root {
+  /* position: relative; */
+  /* border: 1px solid pink; */
+  /* height: 100vh; */
+
+}
+
 @media (min-width: 992px) {
   #root {
     margin: 0 auto;
     max-width: 1140px;
+    /* border: 2px solid red; */
+    /* height: 100vh; */
   }
 }
 

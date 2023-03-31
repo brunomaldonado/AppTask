@@ -9,7 +9,7 @@ const TodoForm = () => {
   const [titleTask, setTitleTask] = useState('');
   const [newTaskDescription, setNewTaskDescription] = useState('');
   
-  const { addTasks, setOpenModal } = useContext(TodoContext);
+  const { onClickAddTask, setOpenModal } = useContext(TodoContext);
 
   // const onChangeLogo = (event) => {
   //   console.log("event", event);
@@ -31,7 +31,7 @@ const TodoForm = () => {
   const onSubmit = (event) => {
     event.preventDefault();
     if(titleTask.length <= 0 && newTaskDescription.length <= 0) return;
-    addTasks(titleTask, newTaskDescription)
+    onClickAddTask(titleTask, newTaskDescription)
     setOpenModal(false)
     document.querySelector('.newTasks').style.zIndex = '99';
   }

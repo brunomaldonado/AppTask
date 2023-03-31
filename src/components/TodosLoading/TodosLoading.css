@@ -1,0 +1,99 @@
+.loading_container {
+  width: 100%;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 50px auto 32px;
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
+  background-color: #24385b;
+  position: relative;
+  background: linear-gradient(90deg, rgba(250,250,250,1), rgb(200, 199, 199));
+  margin-bottom: 10px;
+}
+
+/* .loading_container {
+  display: none;
+} */
+
+.loading_completedIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: aliceblue;
+}
+
+.loading_textTitle {
+  background-color: antiquewhite;
+  width: 60%;
+  height: 10px;
+  margin: 2px 0 8px ;
+}
+.loading_text {
+  width: 90%;
+  height: 8px;
+  background-color: red;
+  margin: 4px 0; 
+}
+
+.loading_text:nth-child(2) {
+  width: 100%;
+  background-color: green;
+
+}
+
+.loading_text:nth-child(3) {
+  width: 100%;
+  background-color: yellow;
+
+}
+
+.loading_icons {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.loading_editIcon {
+  position: absolute;
+  top: 4px;
+  right: 0;
+  width: 20px;
+  height: 25px;
+  background-color: aliceblue;
+  border-radius: 3px;
+}
+
+.loading_deleteIcon {
+  position: absolute;
+  bottom: 4px;
+  right: 0;
+  width: 20px;
+  height: 25px;
+  background-color: aliceblue;
+  border-radius: 3px;
+}
+
+.loading_completedIcon, .loading_textTitle, .loading_text, .loading_editIcon, .loading_deleteIcon {
+  background: linear-gradient(90deg, rgba(250,250,250,1), rgb(200, 199, 199));
+  background-size: 400% 400%;
+  animation: loadingAnimation 3s ease-in-out infinite;
+}
+
+@keyframes loadingAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .loading_container {
+    margin-bottom: 0;
+  }
+}

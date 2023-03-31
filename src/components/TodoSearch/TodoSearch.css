@@ -1,5 +1,7 @@
 #searchForm {
   position: relative;
+  display: flex;
+  /* display: inline-block; */
 }
 
 .search {

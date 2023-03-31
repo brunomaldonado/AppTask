@@ -13,11 +13,19 @@ function CreateTodoButton(props) {
 
   return (
     <div className="button_addTask">
-      <span 
+      <button 
         className='newTasks'
         onClick={onClickButton}
-      >
-      </span>
+      > 
+      
+      </button>
+
+      {/* <span 
+        className='newTasks'
+        onClick={onClickButton}
+      > 
+      
+      </span> */}
     </div>
   )
 }

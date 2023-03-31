@@ -33,7 +33,7 @@ const TodoEditForm = () => {
     // console.log('onSubmit')
     event.preventDefault();
     // if(newTaskTitle.length <= 0 && newTaskDescription.length <= 0) return;
-    // // addTasks(newTaskTitle, newTaskDescription)
+    // // onClickAddTask(newTaskTitle, newTaskDescription)
     // setOpenEditModal(false)
     // // editTask(newTaskTitle, newTaskDescription);
     // document.querySelector('.newTasks').style.zIndex = '99';

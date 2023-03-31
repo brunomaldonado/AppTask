@@ -22,8 +22,6 @@ function TodoItem(props) {
   const { 
     onClickDeleteTask,
     onClickEditTask,
-    // showModal,
-    // setShowModal,    
   } = useContext(TodoContext) 
 
   function removeModal() {
@@ -66,7 +64,7 @@ function TodoItem(props) {
 
   return (
     <>
-      <li className={`container_item ${props.completed && 'container_item--active'}`}>
+      <li className={`container_item loading_containerS${props.completed && 'container_item--active'}`}>
         <div className="container_check">
           <img 
             // src={props.imageUrl} 
@@ -125,7 +123,7 @@ function TodoItem(props) {
                     className='container_buttons container_buttons__portal'
                   >
                     <button className='edit'
-                      onClick={() => onClickEditTask(props.title)}
+                      onClick={() => (onClickEditTask(props.title), setShowModal(false))}
                     ></button>
                   </div>
                 </li> 

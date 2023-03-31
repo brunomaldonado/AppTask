@@ -1,13 +1,10 @@
 section {
-  /* border: 1px solid rgba(172, 255, 47, 0.397); */
+  /* border: 1px solid pink; */
   margin-bottom: 8rem;
 }
 
 .container_list {
-  /* margin-top: 1.2rem; */
-  /* justify-content: center; */
-  /* gap: 10px; */
-  /* column-count: 1; */
+  position: relative;
 }
 
 @media screen and (min-width: 768px) {
