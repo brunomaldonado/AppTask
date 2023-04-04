@@ -94,3 +94,24 @@
       transform: translateY(-1.5px)
   }
 }
+
+@media (min-width: 540px) {
+  .cont {
+    width: 475px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 720px) {
+  .cont {
+    width: 700px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .cont {
+    width: 95%;
+    margin: 0 auto;
+  }
+}

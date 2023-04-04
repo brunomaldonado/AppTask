@@ -7,7 +7,7 @@ section {
   position: relative;
 }
 
-@media screen and (min-width: 768px) {
+@media (min-width: 720px) {
   .container_list {
     /* max-width: 100%; */
     /* display: flex; */
@@ -17,11 +17,16 @@ section {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
-    /* column-count: 2; */
-    /* column-gap: 2rem; */
-    /* column-rule: 2px solid #333; */
   }
 }
+
+/* @media screen and (min-width: 768px) {
+  .container_list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+} */
 
 @media screen and (min-width: 1200px) {
   .container_list {

@@ -27,16 +27,12 @@
 }
 
 .container_button {
-  /* display: flex;
-  justify-content: space-between;
-  align-items: center; */
   display: grid;
   grid-template-columns: 1fr 1fr;
   place-content: center;
   align-items: center;
   gap: 8px;
   margin: 0.5rem 0;
-  /* border: 1px solid red; */
   padding-left: 4rem;
 }
 
@@ -51,13 +47,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: 1.25rem;
+    padding-left: 0.4rem;
   }
 }
-
-/* @media screen and (max-width: 475px) {
-  .click_button {
-    position: relative;
-    left: -1.2rem;
-  }
-} */
