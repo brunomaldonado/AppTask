@@ -1,14 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
+// import { TodoContext } from '../../TodoContext'
 import './CreateTodoButton.css'
 
 function CreateTodoButton(props) {
-  // const onClickButton = (msg) => {
-  //   alert(msg)
-  // }
+
+  // const { searchValue } = useContext(TodoContext)
+
   const onClickButton = () => {
     props.setOpenModal(true)
     document.querySelector('.newTasks').style.zIndex = '-99';
     // props.openModal ? props.setOpenModal(false) : props.setOpenModal(true);
+
+    // console.log("searchValue", searchValue.current.value)
   }
 
   return (

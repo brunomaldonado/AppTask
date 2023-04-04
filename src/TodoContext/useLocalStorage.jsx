@@ -21,10 +21,11 @@ function useLocalStorage(itemName, initialValue) {
         setItem(parsedItem);
         setLoading(false);
       } catch (error) {
+        console.log("error", error)
         setError(error);
       }
 
-    }, 15000)
+    }, 1500)
   })
 
   const saveItem = (newItem) => {
@@ -33,6 +34,7 @@ function useLocalStorage(itemName, initialValue) {
       localStorage.setItem(itemName, strigifiedItem);
       setItem(newItem);
     } catch (error) {
+      console.log("error save", error)
       setError(error);
     }
   }

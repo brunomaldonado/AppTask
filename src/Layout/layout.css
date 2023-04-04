@@ -94,28 +94,3 @@
       transform: translateY(-1.5px)
   }
 }
-
-
-/* .skeleton_loading  > .loading_container {
-  display: none;
-} */
-
-/* .hide_skeletonLoading > .loading_container {
-  display: none;
-} */
-
-/* @media screen and (min-width: 768px) {
-  .skeleton_loading {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 10px;
-    
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .skeleton_loading {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-} */

@@ -64,7 +64,7 @@ function TodoItem(props) {
 
   return (
     <>
-      <li className={`container_item loading_containerS${props.completed && 'container_item--active'}`}>
+      <li className={`container_item ${props.completed && 'container_item--active'}`}>
         <div className="container_check">
           <img 
             // src={props.imageUrl} 

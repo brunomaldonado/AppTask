@@ -9,7 +9,7 @@ const TodoForm = () => {
   const [titleTask, setTitleTask] = useState('');
   const [newTaskDescription, setNewTaskDescription] = useState('');
   
-  const { onClickAddTask, setOpenModal } = useContext(TodoContext);
+  const { onClickAddTask, setOpenModal, } = useContext(TodoContext);
 
   // const onChangeLogo = (event) => {
   //   console.log("event", event);
@@ -34,6 +34,8 @@ const TodoForm = () => {
     onClickAddTask(titleTask, newTaskDescription)
     setOpenModal(false)
     document.querySelector('.newTasks').style.zIndex = '99';
+
+
   }
 
   return (
@@ -47,6 +49,7 @@ const TodoForm = () => {
       <input
         value={titleTask}
         onChange={onChangeTitle} 
+        id="inputForm"
         type="text" 
         placeholder='Never stop to learn ' 
         className='form_input'

@@ -1,5 +1,7 @@
 import  React, { useState } from 'react';
 import { createContext } from 'react';
+import { EmptyTodos } from '../components/EmptyTodos';
+import { TodosNoFound } from '../components/TodosNoFound';
 import { useLocalStorage } from './useLocalStorage';
 
 const TodoContext = createContext();
@@ -15,17 +17,16 @@ function TodoProvider(props) {
     error, 
   }= useLocalStorage('TODOS_V1', []);
 
-  const [searchValue, setSearchValue] = useState('');
+  const [searchValue, setSearchValue] = useState("");
   const [openModal, setOpenModal] = useState(false)
   const [openEditModal, setOpenEditModal] = useState(false)
   const [taskTitleValue, setTaskTitleValue] = useState('');
   const [taskBodyValue, setTaskBodyValue] = useState('');
   const [taskEdit, setTaskEdit] = useState({title: '', body: '', completed: false});
-  // const [taskEdit, setTaskEdit] = useState([]);
 
   const completedLists = tasksList.filter(task => !!task.completed).length;
   const totalTask = tasksList.length;
-  // console.log("total lists", totalTask);
+  // console.log("total lists", tasksList.length);
 
   //como filtrar la cantidad de task list de nuestra aplicacion dependiendo del valor que ingrsamos en searchValue (input)
   let searchedTaskList = [];
@@ -33,6 +34,7 @@ function TodoProvider(props) {
 
   if (!searchValue.length >= 1) {
     searchedTaskList = tasksList;
+    // console.log("searvh", searchValue);
   } else {
     searchedTaskList = tasksList.filter(task => {
       const titleText = task.title.toLowerCase();
@@ -40,6 +42,8 @@ function TodoProvider(props) {
       return titleText.includes(searchText);
     })
   }
+
+  // console.log("searchedTaskList", searchedTaskList)
 
   const onChangeTaskTitle = ({target}) => {
     setTaskTitleValue(target.value);
@@ -52,16 +56,18 @@ function TodoProvider(props) {
   }
 
   const onClickAddTask = (title, body, image) => {
-    console.log("add task")
+    // console.log("add task")
     const newTasksList = [...tasksList]
     newTasksList.push({
       image,
       title,
       body,
       completed: false,
+
     })
 
     saveTasksList(newTasksList);
+
   }
 
   const onClickCompleteTask = (title) => {
@@ -78,7 +84,7 @@ function TodoProvider(props) {
   }
 
   const onClickDeleteTask = (title) => {
-    console.log('CONTEXT', title)
+    // console.log('CONTEXT', title)
     // alert("You whish to delete the task  " + title + "?")
     const taskIndex = tasksList.findIndex(task => task.title === title);
     const newTasksList = [...tasksList];
@@ -102,7 +108,7 @@ function TodoProvider(props) {
 
     
     const taskToEdit = tasksList.filter(task => (task.title === title))
-    console.log('EDIT TASKS', taskToEdit)
+    // console.log('EDIT TASKS', taskToEdit)
     // console.log('GET TASKS title', taskToEdit.map(title => title.title))
 
     // const newTitle = taskToEdit.map(title => title.title);
@@ -113,7 +119,7 @@ function TodoProvider(props) {
     setTaskBodyValue(taskToEdit[0].body);
 
     setOpenEditModal(true);
-    console.log('TASK LIST', tasksList);
+    // console.log('TASK LIST', tasksList);
   }
 
 
@@ -129,25 +135,10 @@ function TodoProvider(props) {
     updateTask.splice(taskIndexOf,1,taskEdit);
     //SET
     // saveTasksList(updateTask);
-    console.log('update TASKS', updateTask)     
+    // console.log('update TASKS', updateTask)     
      
     setOpenEditModal(false);
-
   }
-
-  // const editTask = (editedTask) => {
-  //   console.log('edit task todocontext', editedTask.title)
-    // const updatedTasksList = tasks.map((task) => {
-    //   if(task.id === editedTask.id) {
-    //     return editedTask;
-    //   } else {
-    //     return task;
-    //   };
-    // });
-  //   saveTasksList(updatedTasksList);
-  // }
-
-  // console.log('TASK LIST', tasksList);
 
   return (
     <TodoContext.Provider value={{

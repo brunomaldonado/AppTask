@@ -1,4 +1,4 @@
-.empty_container {
+.search_container {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -10,30 +10,18 @@
   /* top: 50px; */
   /* left: 50%; */
   position: absolute;
-  top: 190px;
+  top: 220%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* visibility: hidden; */
 }
 
-.empty_container span {
+.search_container span {
   font-weight:800;
   font-size: .85rem;
   margin: 10px 0 10px 0;
 }
 
-.empty_container p {
+.search_container p {
   font-size: .95rem;
   margin: 3px;
-}
-
-.empty_container--active {
-  visibility: hidden;
-}
-
-
-.emptyTodos {
-  opacity: 0;
-  /* display: none; */
-  visibility: hidden;
 }

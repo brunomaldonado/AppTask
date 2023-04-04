@@ -6,6 +6,7 @@ import empty from '../../assets/drafts.svg'
 // import check from '../../assets/chekbox.png';
 
 function EmptyTodos() {
+  
   return (
     <div className='empty_container'>
       <img src={empty} alt="" />
