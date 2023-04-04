@@ -3,7 +3,7 @@ import { TodoCounter } from '../components/TodoCounter';
 import { TodoItem } from '../components/TodoItem';
 import { TodoSearch } from '../components/TodoSearch'
 import TodoList from '../components/TodoList'
-// import { CreateTodoButton } from '../components/CreateTodoButton';
+import { CreateTodoButton } from '../components/CreateTodoButton';
 import { TodoContext } from '../TodoContext'; 
 
 import './layout.css';
@@ -14,7 +14,6 @@ import TodoEditForm from '../components/TodoEditForm';
 
 import { TodosLoading } from '../components/TodosLoading';
 import { EmptyTodos } from '../components/EmptyTodos'
-import { TodosNoFound } from '../components/TodosNoFound'
 
 function Layout() {
 // const Layout = () => {
@@ -41,11 +40,9 @@ function Layout() {
     <React.Fragment>
       <div className="cont">
         <TodoCounter/>
-        <TodoSearch/>
+        <TodoSearch />
 
         <TodoList>
-        {/* {(!loading && !error && !searchedTaskList.length) && (<TodosNoFound/> )} */}
-          {/* {isShown && <TodosNoFound/>} */}
           {/* {(!loading && !error && !searchedTaskList.length) ? <EmptyTodos/> : <TodosNoFound/>} */}
           {/* {loading && <p style={{fontWeight: 'bold', fontSize: '1.5em', letterSpacing: '0.25em'}}>Loading...</p>} */}
           {loading && [1,2,3,4,5,6,7,8].map((n) => <TodosLoading key={n}/>)

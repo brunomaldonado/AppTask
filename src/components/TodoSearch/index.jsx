@@ -15,10 +15,7 @@ function TodoSearch() {
 
   const onSearchValueInput = (event) => {
     setSearchValue(event.target.value);
-    // let inputValue = setSearchValue(event.target.value);
     let inputValue = event.target.value;
-    // console.log("writing keyboard", event.target.value);
-    // console.log("writing inputValue", inputValue.length);
 
     if (!setSearchValue(event.target.value)) {
       document.querySelector(".clear_keyboard").style.visibility = 'visible'
@@ -28,18 +25,17 @@ function TodoSearch() {
     }
   }
 
-  const onClickButton = (event) => {
-    // Array.from(document.getElementById('searchForm')).forEach(
-    //   input => (input.value = '')
-    // )
-    setOpenModal(true)
-    document.querySelector('.newTasks').style.zIndex = '-99';
-    // console.log("click add new task", searchValue)
-    // setSearchValue(event.target.value).reset();
-    setSearchValue("");
-    document.querySelector(".clear_keyboard").style.visibility = 'hidden';
-
-  }
+  // const onClickButton = (event) => {
+  //   // Array.from(document.getElementById('searchForm')).forEach(
+  //   //   input => (input.value = '')
+  //   // )
+  //   setOpenModal(true)
+  //   document.querySelector('.newTasks').style.zIndex = '-99';
+  //   // console.log("click add new task", searchValue)
+  //   // setSearchValue(event.target.value).reset();
+  //   setSearchValue("");
+  //   document.querySelector(".clear_keyboard").style.visibility = 'hidden';
+  // }
 
 
   const clearKeyboard = (event) => {
@@ -75,25 +71,18 @@ function TodoSearch() {
       <svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
       </span>
       {/* <button className='erase_keyboard'></button> */}
-      {/* <CreateTodoButton 
+      {(!loading && totalTask != 0) && <CreateTodoButton 
         setOpenModal = {setOpenModal}
-      /> */}
+      />}
 
-      <div className="button_addTask">
+      {/* <div className="button_addTask">
         <button type='submit'
           className='newTasks'
           onClick={onClickButton}
         > 
 
         </button>
-
-        {/* <span 
-          className='newTasks'
-          onClick={onClickButton}
-        > 
-        
-        </span> */}
-      </div>
+      </div> */}
     </form>
     {(!loading && !error && !searchedTaskList.length && totalTask != 0) && (<TodosNoFound/> )}
     {/* <p>{searchValue}</p> */}

@@ -1,17 +1,13 @@
 #searchForm {
+  width: 100%;
   position: relative;
   display: flex;
-  /* border: 2px solid red; */
-  
-  /* display: inline-block; */
 }
 
 .search {
   border: 1.5px solid #5f6368;
-  /* padding: 8px 8px; */
   height: 35px;
-  /* width: calc(50% - 10px); */
-  width: 320px;
+  max-width: 100%;
   font-size: 1.6em;
   border-radius: 10px;
   padding-left: 3rem;
@@ -23,20 +19,9 @@
   color: #9aa0a6;
   outline: none;
   fill: currentColor;
-  /* border: none; */
 }
 
 .searchForm_button{
-  /* background-image: url('../../assets/search.svg');
-  background-repeat: no-repeat;
-  width: 25px;
-  height: 25px;
-  position: absolute;
-  top: 0.5em;
-  left: 1.5em;
-  border: none;
-  outline: none;
-  z-index: 99; */
   position: absolute;
   top: 5px;
   left: 1.5em;
@@ -45,7 +30,6 @@
   vertical-align: middle;
   outline: none;
   width: 25px;
-  /* height: 25px; */
   height: 25px;
   line-height: 25px;
   fill: currentColor;
@@ -57,122 +41,48 @@
   font-weight: 500;
 }
 .search:hover {
-  /* background: transparent; */
   background: #182950;
   border: none;
-  /* outline-color: #61dafa; */
 }
 
-
 .clear_keyboard {
-  /* background-image: url('../../assets/ios_close.png'); */
-  /* background-size: cover;
-  background-repeat: no-repeat; */
-  /* position: relative;
-  top: 0.125rem;
-  right: 2.5rem;
-  z-index: 1;
-  border-radius: 50%;
-  width: 32px;
-  height: 32px;
-  border: none;
-  outline: none;
-  background: transparent; */
-  position: absolute;
-  top: 5px;
-  right: 4.5rem;
+  position: relative;
+  top: 6px;
+  right: 2rem;
   color: #9aa0a6;
-  /* display: inline-block; */
-  /* vertical-align: middle; */
   outline: none;
   width: 24px;
-  /* height: 23px;
-  line-height: 23px; */
   fill: currentColor;
   cursor: pointer;
   visibility: hidden;
 }
 
-
-
-.button_addTask {
+/* .button_addTask {
   position: relative;
-  /* left: 1.2rem; */
-  /* margin-right: 1.5rem; */
   bottom: 0.25rem;
-  /* right: 1.5rem; */
-  /* width: 45px;
-  height: 45px; */
-  /* font-size: 2rem; */
-  /* background-color: red; */
-  /* border: 1px solid red; */
 }
 
 .newTasks {
   width: 40px;
   height: 40px;
-  /* border: 1px solid pink; */
-  /* border: 5px solid transparent; */
   font-size: 0.75rem;
-  /* position: relative; */
-  /* bottom: .90rem; */
-  /* right: 0; */
-  /* background-image: url('../assets/components/CreateTodoButton/moreTask.png'); */
   background-image: url('../../assets/more.png');
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 50%;
   outline: none;
   cursor: pointer;
-  /* transform-style: preserve-3d;
-  transform-origin: center;
-  transition: transform 1s; */
-  /* border: none; */
   box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.25);
-  /* background: inherit; */
   z-index: 99;
 }
 
- /* .newTasks.active {
-  z-index: -99;
-} */
-
 .newTasks:hover {
-  /* transform: rotate(-8deg); */
   transition: all 0.2s;
   transition: transform 1s;
-  /* z-index: 99; */
-}
-
-
-
-
-
-
-
-@media screen and (max-width: 475px) {
-  .search {
-    /* border: 1.5px solid #ec0101; */
-    /* height: 32px; */
-    width: calc(100% - 10px);
-  } 
-
-  .button_addTask {
-    position: relative;
-    left: 1.2rem;
-    margin-right: 1.25rem;
-
-  }
-}
+} */
 
 @media screen and (min-width: 476px) {
-  /* .search {
-
-    width: 300px;
-  }  */
-
-  .clear_keyboard {
-    position: relative;
-    right: 2rem;
-  }
+  .search {
+    width: 320px;
+  } 
 }
