@@ -5,7 +5,6 @@ import './TodoForm.css'
 import task from '../../assets/new.png';
 
 const TodoForm = () => {
-  // const [newTaskLogo, setNewTaskLogo] = useState(0);
   const [titleTask, setTitleTask] = useState('');
   const [newTaskDescription, setNewTaskDescription] = useState('');
   

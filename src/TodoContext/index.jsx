@@ -1,7 +1,5 @@
 import  React, { useState } from 'react';
 import { createContext } from 'react';
-import { EmptyTodos } from '../components/EmptyTodos';
-import { TodosNoFound } from '../components/TodosNoFound';
 import { useLocalStorage } from './useLocalStorage';
 
 const TodoContext = createContext();
@@ -23,6 +21,7 @@ function TodoProvider(props) {
   const [taskTitleValue, setTaskTitleValue] = useState('');
   const [taskBodyValue, setTaskBodyValue] = useState('');
   const [taskEdit, setTaskEdit] = useState({title: '', body: '', completed: false});
+
 
   const completedLists = tasksList.filter(task => !!task.completed).length;
   const totalTask = tasksList.length;
