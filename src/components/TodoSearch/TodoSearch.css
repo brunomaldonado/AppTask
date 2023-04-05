@@ -6,7 +6,7 @@
 
 .search {
   border: 1.5px solid #5f6368;
-  height: 35px;
+  height: 35.5px;
   max-width: 100%;
   font-size: 1.6em;
   border-radius: 10px;
@@ -47,11 +47,20 @@
 
 .clear_keyboard {
   position: relative;
-  top: 5.5px;
+  /* top: 5.5px; */
+  top: 7px;
   right: 2rem;
   color: #9aa0a6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   outline: none;
-  width: 24px;
+  width: 22px;
+  height: 22px;
+  padding: 2px;
+  /* border: 0.5px solid #9aa0a6; */
+  background-color: rgba(112, 117, 126, 0.25);
+  border-radius: 50%;
   fill: currentColor;
   cursor: pointer;
   visibility: hidden;
