@@ -45,7 +45,12 @@
 .loading_text:nth-child(3) {
   width: 100%;
   background-color: yellow;
+}
 
+.loading_text:nth-child(5) {
+  margin-top: .85rem;
+  width: 56%;
+  background-color: black;
 }
 
 .loading_icons {
@@ -76,7 +81,6 @@
 
 .loading_completedIcon, .loading_textTitle, .loading_text, .loading_editIcon, .loading_deleteIcon {
   background: linear-gradient(90deg, rgba(250,250,250,1), rgb(200, 199, 199));
-  /* background: linear-gradient(90deg, rgb(42, 40, 99), rgb(43, 43, 49)); */
   background-size: 400% 400%;
   animation: loadingAnimation 3s ease-in-out infinite;
 }

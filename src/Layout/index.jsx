@@ -33,6 +33,8 @@ function Layout() {
     totalTask,
     isShownE,
     isShownN,
+    dateTime,
+    date
   } = useContext(TodoContext);
   
 
@@ -63,8 +65,10 @@ function Layout() {
               key={task.title} 
               imageUrl={task.imageUrl}  
               title={task.title} 
-              body={task.body} 
+              description={task.description} 
               completed={task.completed}
+              date={task.date}
+              // dateToStart={() => dateTime(task.date)}
               onComplete={() => onClickCompleteTask(task.title)}
               onDelete={() => onClickDeleteTask(task.title)}
             />

@@ -4,6 +4,13 @@ import { useLocalStorage } from './useLocalStorage';
 
 const TodoContext = createContext();
 
+const ob = [{
+  title: 'ABCDEFGH',
+  description: 'This is a test',
+  completed: false,
+  date: "Wed April 5 6:03 PM"
+}]
+
 function TodoProvider(props) {
     // const [patito, setPatito] = useLocalStorage('PATITO_V1', "Angela");
   // const [tasksList, setTasksList] = useLocalStorage('TODOS_V1', []);
@@ -21,6 +28,8 @@ function TodoProvider(props) {
   const [taskTitleValue, setTaskTitleValue] = useState('');
   const [taskBodyValue, setTaskBodyValue] = useState('');
   const [taskEdit, setTaskEdit] = useState({title: '', body: '', completed: false});
+  const [date, setDate] = useState();
+
 
 
   const completedLists = tasksList.filter(task => !!task.completed).length;
@@ -53,14 +62,65 @@ function TodoProvider(props) {
     // console.log("onChangeTaskBody", target.value);
 
   }
+// 
+  // let date = "Wed April 5 6:03 PM"
+  // let date;
+  // const timeNow = new Date();
+  // // console.log("timeNow", timeNow);
 
-  const onClickAddTask = (title, body, image) => {
-    // console.log("add task")
+  // let hours = timeNow.getHours().toString().length < 2 ? "0" + timeNow.getHours() : timeNow.getHours();
+  // let minutes = timeNow.getMinutes().toString().length < 2 ? "0" + timeNow.getMinutes() : timeNow.getMinutes();
+  // let seconds = timeNow.getSeconds().toString().length < 2 ? "0" + timeNow.getSeconds() : timeNow.getSeconds();
+
+  // let mainTime = `${hours}:${minutes}:${seconds}`;
+  // date = mainTime
+
+  const onClickAddTask = (title, description, date, image) => {
+    // let date;
+    const timeNow = new Date();
+    // console.log("timeNow", timeNow);
+
+    // let day = timeNow.getDay();
+    // let fullDate = 
+  
+    let hours = timeNow.getHours().toString().length < 2 ? "0" + timeNow.getHours() : timeNow.getHours();
+    let minutes = timeNow.getMinutes().toString().length < 2 ? "0" + timeNow.getMinutes() : timeNow.getMinutes();
+    let seconds = timeNow.getSeconds().toString().length < 2 ? "0" + timeNow.getSeconds() : timeNow.getSeconds();
+  
+    let mainTime = `${hours}:${minutes}:${seconds}`;
+    // date = timeNow.toLocaleString('en-US')
+    date = timeNow.toLocaleString('en-US', {
+      weekday: 'short', // long, short, narrow
+      day: 'numeric', // numeric, 2-digit
+      year: 'numeric', // numeric, 2-digit
+      month: 'long', // numeric, 2-digit, long, short, narrow
+      hour: 'numeric', // numeric, 2-digit
+      minute: 'numeric', // numeric, 2-digit
+      second: 'numeric', // numeric, 2-digit
+  })
+    
+    console.log("timeNow", timeNow);
+    console.log("local", timeNow.toLocaleString('en-US'))
+    console.log("Date", timeNow.toLocaleString('en-US', {
+      weekday: 'short', // long, short, narrow
+      day: 'numeric', // numeric, 2-digit
+      year: 'numeric', // numeric, 2-digit
+      month: 'long', // numeric, 2-digit, long, short, narrow
+      hour: 'numeric', // numeric, 2-digit
+      minute: 'numeric', // numeric, 2-digit
+      second: 'numeric', // numeric, 2-digit
+  }));
+    // console.log("get full year", timeNow.getFullYear());
+    // console.log("get month", timeNow.getMonth().toString());
+    // console.log("get day", timeNow.getDay().toString().length < 2 ? "0" : null);
+    // console.log("date", date);
+
     const newTasksList = [...tasksList]
     newTasksList.push({
       image,
       title,
-      body,
+      description,
+      date,
       completed: false,
 
     })
@@ -121,7 +181,6 @@ function TodoProvider(props) {
     // console.log('TASK LIST', tasksList);
   }
 
-
   const onClickTaskUpdate = () => {
     // NEW TASK LIST
     setTaskEdit((prev) => prev.title = taskTitleValue);
@@ -137,6 +196,10 @@ function TodoProvider(props) {
     // console.log('update TASKS', updateTask)     
      
     setOpenEditModal(false);
+  }
+
+  const dateTime = (event) => {
+    setDate(event.target.value);
   }
 
   return (
@@ -163,6 +226,8 @@ function TodoProvider(props) {
       taskBodyValue,
       setTaskBodyValue,
       onClickTaskUpdate,
+      dateTime,
+      // date,
     }}>
 
       {props.children}
