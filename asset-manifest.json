@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/AppTask/static/css/main.cc48ebc7.css",
-    "main.js": "/AppTask/static/js/main.5e194806.js",
+    "main.css": "/AppTask/static/css/main.993e899d.css",
+    "main.js": "/AppTask/static/js/main.826f45d9.js",
     "static/media/more.png": "/AppTask/static/media/more.0d59307445a7e4a093be.png",
     "static/media/check12.png": "/AppTask/static/media/check12.703a6d1f410001b659f8.png",
     "static/media/three.png": "/AppTask/static/media/three.17f85005f129e3d362c7.png",
@@ -10,11 +10,11 @@
     "static/media/searchKeyword.svg": "/AppTask/static/media/searchKeyword.38a99bebe2685813cf634d4c478e1300.svg",
     "static/media/drafts.svg": "/AppTask/static/media/drafts.48fb62371bb4e3da54b9732da780cae6.svg",
     "index.html": "/AppTask/index.html",
-    "main.cc48ebc7.css.map": "/AppTask/static/css/main.cc48ebc7.css.map",
-    "main.5e194806.js.map": "/AppTask/static/js/main.5e194806.js.map"
+    "main.993e899d.css.map": "/AppTask/static/css/main.993e899d.css.map",
+    "main.826f45d9.js.map": "/AppTask/static/js/main.826f45d9.js.map"
   },
   "entrypoints": [
-    "static/css/main.cc48ebc7.css",
-    "static/js/main.5e194806.js"
+    "static/css/main.993e899d.css",
+    "static/js/main.826f45d9.js"
   ]
 }
