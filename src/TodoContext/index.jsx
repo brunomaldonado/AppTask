@@ -218,7 +218,7 @@ function TodoProvider(props) {
     }))
 
 
-    console.log("dateTime local", dateTimeLocal);
+    // console.log("dateTime local", dateTimeLocal);
     // console.log(event.target.value);
     // const date = event.target.value;
     // console.log("date", date.toLocaleString('en-US'));

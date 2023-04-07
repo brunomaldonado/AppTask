@@ -1,25 +1,14 @@
 import React, { useContext, useState } from 'react';
 import { TodoContext } from '../../TodoContext';
 
-import dayjs from 'dayjs';
-import { DemoContainer, DemoItem } from '@mui/x-date-pickers/internals/demo';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
-
 import './TodoForm.css'
 
-import task from '../../assets/new.png';
-
-const today = dayjs();
-const yesterday = dayjs().subtract(1, 'day');
-const todayStartOfTheDay = today.startOf('day');
+import calendar from '../../assets/calendar.png';
+// import calendar from '../../assets/calend.png';
 
 const TodoForm = () => {
   const [titleTask, setTitleTask] = useState('');
   const [newTaskDescription, setNewTaskDescription] = useState('');
-  const [date, setDate] = useState();
   
   const { onClickAddTask, setOpenModal, dateTime } = useContext(TodoContext);
 
@@ -73,8 +62,12 @@ const TodoForm = () => {
         required
       />
 
-      <label className='form_description'>Pisck a date</label>
-      <input className='form_date' type="datetime-local" id='date' onChange={dateTime} />
+      <label className='form_description'>Pick a date</label>
+      <div className="form_calendary">
+        {/* <span>calend</span> */}
+        <img src={calendar} alt="" />
+        <input className='form_date' type="datetime-local" id='date' onChange={dateTime} required/>
+      </div>
 
       <label className='form_description'>Description</label>
       <textarea 
