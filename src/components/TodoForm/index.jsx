@@ -73,16 +73,8 @@ const TodoForm = () => {
         required
       />
 
-            
-      <label className='form_description'>Date</label>
-      {/* <LocalizationProvider dateAdapter={AdapterDayjs}>
-        <DateTimePicker
-          defaultValue={yesterday}
-          disablePast
-          views={['year', 'month', 'day', 'hours', 'minutes']}
-        />
-      </LocalizationProvider> */}
-      <input type="date" onChange={dateTime} />
+      <label className='form_description'>Pisck a date</label>
+      <input className='form_date' type="datetime-local" id='date' onChange={dateTime} />
 
       <label className='form_description'>Description</label>
       <textarea 

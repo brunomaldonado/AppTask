@@ -87,36 +87,155 @@ li {
   font-family: 'poppins';
   /* color: #808080; */
   color: #9aa0a6;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1.2rem;
   /* margin-bottom: 1.2rem; */
 }
 
 .container_date {
+  /* border: 1px solid red; */
+  /* display: flex; */
+  /* flex-direction: column; */
+}
+
+/* .container_date span:nth-child(2) {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+} */
+
+.container_date .container_end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  /* margin-top: 0.25rem; */
+  /* width: max-content; */
+
 }
 
 .container_start, .container_end {
   position: relative;
-  border: 0.5px solid #a5a5a5;
-  padding: 0.5rem 0px 4px 8px;
+  /* border-bottom: 0.5px solid #a5a5a5; */
+  /* padding: 0.5rem 0px 4px 8px; */
   border-radius: 10px;
+  /* width: max-content; */
+
 }
 
-.container_start label, .container_end label {
+.container_start::before {
+  content: "";
+  display: inline-block;
+  background-color: #a5a5a5;
+  height: 1px;
+  position: relative;
+  bottom: 4px;
+  vertical-align: middle;
+  width: 1px;
+  height: 16px;
+}
+
+.container_start span {
+  padding-left: 5px;
+}
+
+.container_end span {
+  padding-right: 6px;
+}
+
+.container_start .label_start {
   position: absolute;
-  background-color: #24385b;
-  top: -10px;
-  left: 10px;
-  padding: 0 2px 0 2px;
+  /* background-color: #24385b; */
+  top: -12px;
   font-size: .75rem;
   color: #9aa0a6;
 }
 
+/* .container_end .label_end {
+  position: absolute;
+  background-color: #24385b;
+  top: -12px;
+  font-size: .75rem;
+  color: #9aa0a6;
+} */
+
+.label_start::after {
+  content: "";
+  display: inline-block;
+  background-color: #a5a5a5;
+  height: 1px;
+  position: relative;
+  vertical-align: middle;
+  width: 140px;
+  /* padding-right: 8px; */
+}
+
+.label_start::before {
+  content: "";
+  display: inline-block;
+  background-color: #a5a5a5;
+  height: 1px;
+  position: relative;
+  vertical-align: middle;
+  width: 8px;
+}
+
+.container_end::after {
+  content: "";
+  display: inline-block;
+  background-color: #a5a5a5;
+  height: 1px;
+  position: relative;
+  bottom: 1px;
+  right: 10px;
+  vertical-align: middle;
+  width: 1px;
+  height: 14px;
+}
+
+.container_end .label_end {
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  /* padding: 0 2px 0 2px; */
+  font-size: .75rem;
+  color: #9aa0a6;
+}
+
+.label_end::before {
+  content: "";
+  display: inline-block;
+  background-color: #a5a5a5;
+  height: 1px;
+  position: relative;
+  vertical-align: middle;
+  width: 140px;
+}
+
+.label_end::after {
+  content: "";
+  display: inline-block;
+  background-color: #a5a5a5;
+  height: 1px;
+  position: relative;
+  vertical-align: middle;
+  width: 8px;
+}
+
+
+
+/* .label_start::before {
+  content: "";
+  display: inline-block;
+  background-color: #a5a5a5;
+  height: 1px;
+  position: relative;
+  vertical-align: middle;
+  width: 10px;
+} */
+
 
 
 .container_description span {
-  font-size: 1.2em;
+  font-size: 1.1em;
   color: #9aa0a6;
   /* color: #808080; */
 }
@@ -265,8 +384,8 @@ li {
 }
 
 .button_delete {
-  width: 80px;
-  margin-right: 1rem;
+  width: 100%;
+  /* margin-right: 1rem; */
   padding: 0.5rem;
   border: none;
   outline: none;
@@ -286,7 +405,7 @@ li {
 }
 
 .button_cancel {
-  width: 80px;
+  width: 100%;
   margin-right: 1rem;
   padding: 0.5rem;
   border: none;

@@ -90,6 +90,30 @@
   transition: transform 1s;
 } */
 
+/* @media screen and (max-width: 475px) {
+  .search {
+    width: 320px;
+  } 
+  .clear_keyboard {
+    position: relative;
+    top: 7px;
+    right: 2rem;
+    color: #9aa0a6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    width: 22px;
+    height: 22px;
+    padding: 2px; 
+    background-color: rgba(111, 221, 38, 0.25);
+    border-radius: 50%;
+    fill: currentColor;
+    cursor: pointer;
+    visibility: hidden;
+  }
+} */
+
 @media screen and (min-width: 476px) {
   .search {
     width: 320px;

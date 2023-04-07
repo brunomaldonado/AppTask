@@ -88,18 +88,21 @@ function TodoItem(props) {
         <div className={`container_description`}>
           <p>{props.title}</p>
           <p>{props.description}</p>
-          <span id="start">{props.date}</span>
-
           {/* <div className="container_date">
+            <span id="start">{props.dateToStart}</span>
+            <span id="end">{props.dateToEnd}</span>
+          </div> */}
+
+          <div className="container_date">
             <div className="container_start">
-              <label>start</label>
-              <span id="start">{props.date}</span>
+              <label className="label_start">start</label>
+              <span id="start">{props.dateToStart}</span>
             </div>
             <div className="container_end">
-              <label>end</label>
-              <span>Sat Apr 5 00:12 AM</span>
+              <label className='label_end'>end</label>
+              <span className='end'>{props.dateToEnd}</span>
             </div>
-          </div> */}
+          </div>
         {/* <LocalizationProvider dateAdapter={AdapterDayjs}>
             <DatePicker
               defaultValue={today}
@@ -153,7 +156,21 @@ function TodoItem(props) {
                   </div>
                   <div className={`container_description`}>
                     <p>{props.title}</p>
-                    <p>{props.body}</p>
+                    <p>{props.description}</p>
+                    {/* <div className="container_date">
+                      <span id="start">{props.dateToStart}</span>
+                      <span id="end">{props.dateToEnd}</span>
+                    </div> */}
+                    <div className="container_date">
+                      <div className="container_start">
+                        <label className="label_start">start</label>
+                        <span id="start">{props.dateToStart}</span>
+                      </div>
+                      <div className="container_end">
+                        <label className='label_end'>end</label>
+                        <span className='end'>{props.dateToEnd}</span>
+                      </div>
+                    </div>
                   </div>
                   <div 
                     className='container_buttons container_buttons__portal'
@@ -163,19 +180,21 @@ function TodoItem(props) {
                     ></button>
                   </div>
                 </li> 
-                <button 
-                  className='button_cancel'
-                  // onClick={() => setShowModal(false)}
-                  onClick={handleCancelClick}
-                >
-                  Cancel
-                </button>     
-                <button 
-                  className='button_delete'
-                  onClick={() => (onClickDeleteTask(props.title), setShowModal(false))}
-                >
-                  Remove
-                </button>        
+                <div className="form_buttons">
+                  <button 
+                    className='button_cancel'
+                    // onClick={() => setShowModal(false)}
+                    onClick={handleCancelClick}
+                  >
+                    Cancel
+                  </button>     
+                  <button 
+                    className='button_delete'
+                    onClick={() => (onClickDeleteTask(props.title), setShowModal(false))}
+                  >
+                    Remove
+                  </button>   
+                </div>       
               </div>
             </div>,
           </div>,

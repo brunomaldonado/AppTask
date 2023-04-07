@@ -1,6 +1,6 @@
 .save_button {
-  width: 80px;
-  margin-right: 1rem;
+  width: 100%;
+  /* margin-right: 1rem; */
   padding: 0.5rem;
   border: none;
   outline: none;
@@ -9,7 +9,7 @@
   /* background-color: #4398e8; */
   /* background-color: #07db07; */
   /* background-color: #33b1ff; */
-  background-color: #07e616;
+  background-color: #28b731;
   color: #fff;
   letter-spacing: 1.3px;
   cursor: pointer;

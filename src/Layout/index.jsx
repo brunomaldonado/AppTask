@@ -5,15 +5,15 @@ import { TodoSearch } from '../components/TodoSearch'
 import TodoList from '../components/TodoList'
 import { CreateTodoButton } from '../components/CreateTodoButton';
 import { TodoContext } from '../TodoContext'; 
-
-import './layout.css';
 import { AddModal } from '../components/AddModal';
 import { TodoForm } from '../components/TodoForm';
 import EditModal from '../components/EditModal/EditModal';
 import TodoEditForm from '../components/TodoEditForm';
-
 import { TodosLoading } from '../components/TodosLoading';
 import { EmptyTodos } from '../components/EmptyTodos'
+import { Footer } from '../components/Footer'
+
+import './layout.css';
 
 function Layout() {
 // const Layout = () => {
@@ -67,8 +67,8 @@ function Layout() {
               title={task.title} 
               description={task.description} 
               completed={task.completed}
-              date={task.date}
-              // dateToStart={() => dateTime(task.date)}
+              dateToStart={task.dateToStart}
+              dateToEnd={task.dateToEnd}
               onComplete={() => onClickCompleteTask(task.title)}
               onDelete={() => onClickDeleteTask(task.title)}
             />
@@ -91,6 +91,7 @@ function Layout() {
         {/* <CreateTodoButton
           setOpenModal = {setOpenModal}
         /> */}
+        {/* <Footer/> */}
       </div>
     </React.Fragment>
   )

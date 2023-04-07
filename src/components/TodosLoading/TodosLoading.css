@@ -50,7 +50,16 @@
 .loading_text:nth-child(5) {
   margin-top: .85rem;
   width: 56%;
+  height: 10px;
   background-color: black;
+}
+
+.loading_text:nth-child(6) {
+  position: relative;
+  left: calc(50% - 10px);
+  width: 56%;
+  height: 10px;
+  background-color: pink;
 }
 
 .loading_icons {

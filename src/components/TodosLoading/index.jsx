@@ -11,6 +11,7 @@ function TodosLoading() {
         <p className='loading_text'></p>
         <p className='loading_text'></p>
         <p className='loading_text'></p>
+        <p className='loading_text'></p>
       </div>
       <div className='loading_icons'>
         <span className='loading_editIcon'></span>

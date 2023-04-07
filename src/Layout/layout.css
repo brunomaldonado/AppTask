@@ -56,6 +56,9 @@
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   position: relative;
+  width: 100%;
+  /* border: 1px solid greenyellow; */
+  /* height: 100vh; */
 }
 
 .loading {
@@ -93,6 +96,12 @@
   50%{
       transform: translateY(-1.5px)
   }
+}
+
+.footer_container {
+  position: relative;
+  bottom: 0;
+  border: 1px solid red;
 }
 
 @media (min-width: 540px) {

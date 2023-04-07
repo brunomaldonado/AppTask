@@ -28,7 +28,7 @@ function TodoProvider(props) {
   const [taskTitleValue, setTaskTitleValue] = useState('');
   const [taskBodyValue, setTaskBodyValue] = useState('');
   const [taskEdit, setTaskEdit] = useState({title: '', body: '', completed: false});
-  const [date, setDate] = useState();
+  const [dateTimeLocal, setDateTimeLocal] = useState();
 
 
 
@@ -62,34 +62,11 @@ function TodoProvider(props) {
     // console.log("onChangeTaskBody", target.value);
 
   }
-// 
-  // let date = "Wed April 5 6:03 PM"
-  // let date;
-  // const timeNow = new Date();
-  // // console.log("timeNow", timeNow);
 
-  // let hours = timeNow.getHours().toString().length < 2 ? "0" + timeNow.getHours() : timeNow.getHours();
-  // let minutes = timeNow.getMinutes().toString().length < 2 ? "0" + timeNow.getMinutes() : timeNow.getMinutes();
-  // let seconds = timeNow.getSeconds().toString().length < 2 ? "0" + timeNow.getSeconds() : timeNow.getSeconds();
-
-  // let mainTime = `${hours}:${minutes}:${seconds}`;
-  // date = mainTime
-
-  const onClickAddTask = (title, description, date, image) => {
-    // let date;
+  const onClickAddTask = (title, description, dateToStart, image) => {
     const timeNow = new Date();
-    // console.log("timeNow", timeNow);
-
-    // let day = timeNow.getDay();
-    // let fullDate = 
-  
-    let hours = timeNow.getHours().toString().length < 2 ? "0" + timeNow.getHours() : timeNow.getHours();
-    let minutes = timeNow.getMinutes().toString().length < 2 ? "0" + timeNow.getMinutes() : timeNow.getMinutes();
-    let seconds = timeNow.getSeconds().toString().length < 2 ? "0" + timeNow.getSeconds() : timeNow.getSeconds();
-  
-    let mainTime = `${hours}:${minutes}:${seconds}`;
     // date = timeNow.toLocaleString('en-US')
-    date = timeNow.toLocaleString('en-US', {
+    dateToStart = timeNow.toLocaleString('en-US', {
       weekday: 'short', // long, short, narrow
       day: 'numeric', // numeric, 2-digit
       year: 'numeric', // numeric, 2-digit
@@ -99,9 +76,23 @@ function TodoProvider(props) {
       second: 'numeric', // numeric, 2-digit
   })
     
-    console.log("timeNow", timeNow);
-    console.log("local", timeNow.toLocaleString('en-US'))
-    console.log("Date", timeNow.toLocaleString('en-US', {
+    // console.log("timeNow", timeNow);
+    // console.log("local", timeNow.toLocaleString('en-US'))
+    // console.log("Date", timeNow.toLocaleString('en-US', {
+    //   weekday: 'short', // long, short, narrow
+    //   day: 'numeric', // numeric, 2-digit
+    //   year: 'numeric', // numeric, 2-digit
+    //   month: 'long', // numeric, 2-digit, long, short, narrow
+    //   hour: 'numeric', // numeric, 2-digit
+    //   minute: 'numeric', // numeric, 2-digit
+    //   second: 'numeric', // numeric, 2-digit
+    // }));
+
+
+    let field = document.querySelector("#date");
+    
+    let dateTime = new Date(field.value);
+    let dateToEnd = dateTime.toLocaleString('en-US', {
       weekday: 'short', // long, short, narrow
       day: 'numeric', // numeric, 2-digit
       year: 'numeric', // numeric, 2-digit
@@ -109,18 +100,28 @@ function TodoProvider(props) {
       hour: 'numeric', // numeric, 2-digit
       minute: 'numeric', // numeric, 2-digit
       second: 'numeric', // numeric, 2-digit
-  }));
-    // console.log("get full year", timeNow.getFullYear());
-    // console.log("get month", timeNow.getMonth().toString());
-    // console.log("get day", timeNow.getDay().toString().length < 2 ? "0" : null);
-    // console.log("date", date);
+    })
+
+    console.log("date local", dateToEnd)
+
+    // console.log("time to end", dateTime);
+    // console.log("DATE TO END", dateTime.toLocaleString('en-US', {
+    //   weekday: 'short', // long, short, narrow
+    //   day: 'numeric', // numeric, 2-digit
+    //   year: 'numeric', // numeric, 2-digit
+    //   month: 'long', // numeric, 2-digit, long, short, narrow
+    //   hour: 'numeric', // numeric, 2-digit
+    //   minute: 'numeric', // numeric, 2-digit
+    //   second: 'numeric', // numeric, 2-digit
+    // }))
 
     const newTasksList = [...tasksList]
     newTasksList.push({
       image,
       title,
       description,
-      date,
+      dateToStart,
+      dateToEnd,
       completed: false,
 
     })
@@ -199,7 +200,28 @@ function TodoProvider(props) {
   }
 
   const dateTime = (event) => {
-    setDate(event.target.value);
+    setDateTimeLocal(event.target.value);
+
+    let field = document.querySelector("#date");
+    
+    let dateTime = new Date(field.value);
+
+    console.log("dateTime local string", dateTime);
+    console.log(dateTime.toLocaleString('en-US', {
+      weekday: 'short', // long, short, narrow
+      day: 'numeric', // numeric, 2-digit
+      year: 'numeric', // numeric, 2-digit
+      month: 'long', // numeric, 2-digit, long, short, narrow
+      hour: 'numeric', // numeric, 2-digit
+      minute: 'numeric', // numeric, 2-digit
+      second: 'numeric', // numeric, 2-digit
+    }))
+
+
+    console.log("dateTime local", dateTimeLocal);
+    // console.log(event.target.value);
+    // const date = event.target.value;
+    // console.log("date", date.toLocaleString('en-US'));
   }
 
   return (
@@ -227,7 +249,6 @@ function TodoProvider(props) {
       setTaskBodyValue,
       onClickTaskUpdate,
       dateTime,
-      // date,
     }}>
 
       {props.children}
