@@ -97,17 +97,11 @@ li {
   /* flex-direction: column; */
 }
 
-/* .container_date span:nth-child(2) {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 0.5rem;
-} */
-
 .container_date .container_end {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  margin-top: 0.5rem;
+  margin-top: 0.25rem;
   /* width: max-content; */
 
 }
@@ -331,7 +325,7 @@ li {
   top: 51%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border-top: 1px solid #a5a5a5;
+  border-top: 0.5px solid #a5a5a5;
   cursor: none;
 }
 

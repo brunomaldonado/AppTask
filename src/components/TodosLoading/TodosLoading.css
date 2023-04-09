@@ -20,46 +20,59 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: aliceblue;
+  /* background-color: blue; */
 }
 
-.loading_textTitle {
-  background-color: antiquewhite;
+.loading_paragraphs .loading_textTitle {
+  /* background-color: yellowgreen; */
   width: 60%;
   height: 10px;
-  margin: 2px 0 8px ;
+  margin: 4px 0 10px ;
 }
-.loading_text {
-  width: 90%;
+
+.loading_paragraphs .loading_text {
+  /* width: 100%; */
   height: 8px;
-  background-color: red;
-  margin: 4px 0; 
+  /* background-color: red; */
+  /* background-color: red;
+  margin: 4px 0;  */
+  margin: 4px 0;
 }
 
-.loading_text:nth-child(2) {
+.loading_paragraphs .loading_text:nth-child(2) {
   width: 100%;
-  background-color: green;
+  /* background-color: green; */
 
 }
 
-.loading_text:nth-child(3) {
+.loading_paragraphs .loading_text:nth-child(3) {
   width: 100%;
-  background-color: yellow;
+  /* background-color: yellow; */
 }
 
-.loading_text:nth-child(5) {
+.loading_paragraphs .loading_text:nth-child(4) {
+  width: 92%;
+  /* background-color: tomato; */
+}
+
+.loading_paragraphs .loading_text:nth-child(5) {
+  width: 100%;
+  /* background-color: blue; */
+}
+
+.loading_paragraphs .loading_text:nth-child(6) {
   margin-top: .85rem;
   width: 56%;
   height: 10px;
-  background-color: black;
+  /* background-color: yellowgreen; */
 }
 
-.loading_text:nth-child(6) {
+.loading_paragraphs .loading_text:nth-child(7) {
   position: relative;
   left: calc(50% - 10px);
   width: 56%;
   height: 10px;
-  background-color: pink;
+  /* background-color: pink; */
 }
 
 .loading_icons {
@@ -70,21 +83,21 @@
 
 .loading_editIcon {
   position: absolute;
-  top: 4px;
+  top: 6px;
   right: 0;
   width: 20px;
-  height: 25px;
-  background-color: aliceblue;
+  height: 30px;
+  /* background-color: aliceblue; */
   border-radius: 3px;
 }
 
 .loading_deleteIcon {
   position: absolute;
-  bottom: 4px;
+  bottom: 6px;
   right: 0;
   width: 20px;
-  height: 25px;
-  background-color: aliceblue;
+  height: 30px;
+  /* background-color: aliceblue; */
   border-radius: 3px;
 }
 

@@ -4,12 +4,12 @@ import { useLocalStorage } from './useLocalStorage';
 
 const TodoContext = createContext();
 
-const ob = [{
-  title: 'ABCDEFGH',
-  description: 'This is a test',
-  completed: false,
-  date: "Wed April 5 6:03 PM"
-}]
+// const ob = [{
+//   title: 'ABCDEFGH',
+//   description: 'This is a test',
+//   completed: false,
+//   date: "Wed April 5 6:03 PM"
+// }]
 
 function TodoProvider(props) {
     // const [patito, setPatito] = useLocalStorage('PATITO_V1', "Angela");
@@ -102,7 +102,7 @@ function TodoProvider(props) {
       second: 'numeric', // numeric, 2-digit
     })
 
-    console.log("date local", dateToEnd)
+    // console.log("date local", dateToEnd)
 
     // console.log("time to end", dateTime);
     // console.log("DATE TO END", dateTime.toLocaleString('en-US', {
@@ -202,20 +202,20 @@ function TodoProvider(props) {
   const dateTime = (event) => {
     setDateTimeLocal(event.target.value);
 
-    let field = document.querySelector("#date");
+    // let field = document.querySelector("#date");
     
-    let dateTime = new Date(field.value);
+    // let dateTime = new Date(field.value);
 
-    console.log("dateTime local string", dateTime);
-    console.log(dateTime.toLocaleString('en-US', {
-      weekday: 'short', // long, short, narrow
-      day: 'numeric', // numeric, 2-digit
-      year: 'numeric', // numeric, 2-digit
-      month: 'long', // numeric, 2-digit, long, short, narrow
-      hour: 'numeric', // numeric, 2-digit
-      minute: 'numeric', // numeric, 2-digit
-      second: 'numeric', // numeric, 2-digit
-    }))
+    // console.log("dateTime local string", dateTime);
+    // console.log(dateTime.toLocaleString('en-US', {
+    //   weekday: 'short', // long, short, narrow
+    //   day: 'numeric', // numeric, 2-digit
+    //   year: 'numeric', // numeric, 2-digit
+    //   month: 'long', // numeric, 2-digit, long, short, narrow
+    //   hour: 'numeric', // numeric, 2-digit
+    //   minute: 'numeric', // numeric, 2-digit
+    //   second: 'numeric', // numeric, 2-digit
+    // }))
 
 
     // console.log("dateTime local", dateTimeLocal);

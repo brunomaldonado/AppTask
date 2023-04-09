@@ -1,18 +1,123 @@
+@font-face {
+  font-family: "Amador W01 Regular";
+  src: url("./Amador/Amador\ W01\ Regular.ttf");
+}
+
+@font-face {
+  font-family: "Rothenburg Decorative";
+  src: url("./Rothenburg/Rothenburg\ Decorative.ttf");
+}
+
 .header_container {
   display: flex;
   align-items: center;
   margin: 1.5rem 0 1rem 0;
-  /* color: #fff; */
   color: #FAF8F7;
-
 }
 
 .header_logo {
-  width: 80px;
+  width: 90px;
   margin-right: 0.5rem;
 }
 
-.TodoCounter_title {
-  margin-top: 0.25rem;
-  line-height: 1;
+.header_top {
+  /* border: 1px solid pink; */
+  padding-top: 1.5rem;
+}
+
+.header_title::first-letter {
+  font-family: "Rothenburg Decorative";
+  font-size: 2.8rem;
+  color: #cbd0f1;
+  margin-top: 1.5rem;
+}
+
+.header_title span{
+  position: relative;
+  left: 4.5rem;
+  bottom: 0.65rem;
+  font-size: 1.2rem;
+}
+
+.content {
+  position: relative;
+}
+
+.TodoCounter_title::first-letter {
+  font-family: "Amador W01 Regular";
+}
+
+@media screen and (max-width: 330px) {
+  .ellipsis{
+    white-space: pre;
+    overflow: hidden;
+    width: 9ch;
+    text-overflow: ellipsis;
+  }
+
+  .content h2:nth-child(2){
+    position: absolute;
+    left: 2.2rem;
+    bottom: 0.0125rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .content {
+    margin-bottom: 1rem;
+  }
+  .content h2:nth-child(2){
+    position: absolute;
+    font-size: 0.85rem;
+  }
+
+}
+
+@media screen and (min-width: 426px) {
+  .header_title span{
+    position: relative;
+    left: 0rem;
+    bottom: 0rem;
+    /* color: red; */
+  }
+
+  .header_top {
+    position: relative;
+    margin-bottom: 2.5rem;
+  }
+
+  .content {
+    width: 100%;
+    position: absolute;
+    padding-left: 4.5rem;
+  }
+}
+
+@media screen and (min-width: 540px) {
+  .header_top {
+    position: relative;
+    margin-bottom: 2.5rem;
+    margin-left: 0.75rem;
+  }
+}
+
+@media screen and (min-width: 720px) {
+  .header_top {
+    position: relative;
+    margin-bottom: 1rem;
+    margin-left: 0.75rem;
+  }
+  .content {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .content h2:nth-child(2) {
+    position: relative;
+    left: 0.25rem;
+    font-size: 0.85rem;
+  }
 }
