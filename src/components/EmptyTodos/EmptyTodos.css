@@ -10,6 +10,7 @@
   top: 190px;
   left: 50%;
   transform: translate(-50%, -50%);
+  /* border: 1px solid red; */
 }
 
 .empty_container span {
@@ -24,19 +25,20 @@
 }
 
 .container_button {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  place-content: center;
+  display: flex;
   align-items: center;
-  gap: 8px;
-  margin: 0.5rem 0;
-  padding-left: 4rem;
+  margin: 0.5rem 0.5rem;
+  /* border: 1px solid pink; */
 }
 
 .container_button span {
-  position: relative;
-  bottom: 0.25rem;
+  margin-right: 0.5rem;
   font-family: 'Poppins', Courier, monospace;
+}
+
+.container_button #addTodo {
+  position: absolute;
+  top: 10%;
 }
 
 @media screen and (max-width: 475px) {

@@ -66,7 +66,7 @@ const TodoForm = () => {
       <div className="form_calendary">
         {/* <span>calend</span> */}
         <img src={calendar} alt="" />
-        <input className='form_date' type="datetime-local" id='date' onChange={dateTime} required/>
+        <input className='form_date' type="datetime-local" id='date' onChange={dateTime}/>
       </div>
 
       <label className='form_description'>Description</label>

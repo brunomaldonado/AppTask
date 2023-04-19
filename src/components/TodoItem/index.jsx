@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 
 import './TodoItem.css'
 
-import check from '../../assets/chekbox.png';
+import circlecheck from '../../assets/circlecheck.png';
 import { TodoContext } from '../../TodoContext';
 
 function TodoItem(props) {
@@ -15,6 +15,7 @@ function TodoItem(props) {
   const { 
     onClickDeleteTask,
     onClickEditTask,
+    isDisabled,
     // date,
   } = useContext(TodoContext) 
 
@@ -58,17 +59,19 @@ function TodoItem(props) {
 
   return (
     <>
-      <li className={`container_item ${props.completed && 'container_item--active'}`}>
+      <li className={`container_item`}>
         <div className="container_check">
-          <img 
-            // src={props.imageUrl} 
-            src={check} 
+           <img 
+            src={circlecheck} 
             alt="" 
-            onClick={props.onComplete} 
           />
-          <button className={`Icon Icon-check ${props.completed && 'Icon-check--active'}`}></button>
+          <button 
+            className={`Icon Icon-check ${props.completed && 'Icon-check--active'}`} 
+            onClick={props.onComplete}
+          >
+          </button>
         </div>
-        <div className={`container_description`}>
+        <div className={`container_description ${props.completed && 'container_item--active'}`}>
           <p>{props.title}</p>
           <p>{props.description}</p>
           {/* <div className="container_date">
@@ -91,13 +94,15 @@ function TodoItem(props) {
           className='container_buttons'
           // onClick={handleDeleteClick}
         >
-          <button className='edit'
+          <button type='button' className={`edit ${props.completed && 'disabled'}`}
             // onClick={editTask}
             // onClick={() => editTask(props.title)}
             onClick={() => onClickEditTask(props.title)}
+            // disabled={isDisabled}
           ></button>
           <button 
-            className='trash'
+            type='button'
+            className={`trash`}
             // onClick={() => onClickDeleteTask(props.title)}
             onClick={handleDeleteClick}
           >
@@ -118,7 +123,7 @@ function TodoItem(props) {
                   <div className="container_check">
                     <img 
                       // src={props.imageUrl} 
-                      src={check} 
+                      src={circlecheck} 
                       alt="" 
                       // onClick={props.onComplete} 
                     />
@@ -145,9 +150,11 @@ function TodoItem(props) {
                   <div 
                     className='container_buttons container_buttons__portal'
                   >
-                    <button className='edit'
+                    {/* <button type='button' className={`edit`} */}
+                    <button type='button' className={`edit ${props.completed && 'disabled'}`}
                       onClick={() => (onClickEditTask(props.title), setShowModal(false))}
-                    ></button>
+                    >
+                    </button>
                   </div>
                 </li> 
                 <div className="form_buttons">

@@ -16,12 +16,12 @@ function EmptyTodos() {
       <img src={empty} alt="" />
       <span>Nothing in Tasks</span>
       <p>¡Add your first task!</p>
-      <div className='container_button'>
+     <div className="container_button">
+      <div className='span'>
         <span>Click on button</span>
-        <div className="click_button">
-          <CreateTodoButton setOpenModal={setOpenModal}/>
-        </div>
       </div>
+      <CreateTodoButton setOpenModal={setOpenModal}/>
+     </div>
       <p>Start writing something fabolous.</p>
     </div>
   )

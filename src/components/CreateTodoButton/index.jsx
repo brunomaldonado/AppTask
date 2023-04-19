@@ -18,11 +18,11 @@ function CreateTodoButton(props) {
 
   return (
     <div className="button_addTask">
+      <span id="addTodo">Add new task</span>
       <button 
         className='newTasks'
         onClick={onClickButton}
       > 
-      
       </button>
 
       {/* <span 

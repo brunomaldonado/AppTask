@@ -29,8 +29,7 @@ function TodoProvider(props) {
   const [taskBodyValue, setTaskBodyValue] = useState('');
   const [taskEdit, setTaskEdit] = useState({title: '', body: '', completed: false});
   const [dateTimeLocal, setDateTimeLocal] = useState();
-
-
+  const [isDisabled, setIsDisabled] = useState(false);
 
   const completedLists = tasksList.filter(task => !!task.completed).length;
   const totalTask = tasksList.length;
@@ -130,17 +129,25 @@ function TodoProvider(props) {
 
   }
 
+
+  // const buttonsNode = document.getElementsByClassName('edit');
+  // const btnEdit = Array.from(buttonsNode)
+
   const onClickCompleteTask = (title) => {
+
     const taskIndex = tasksList.findIndex(task => task.title === title);
+    // const btnEdit = document.querySelector('.edit');
 
     const newTasksList = [...tasksList]
     tasksList[taskIndex].completed = true;
 
     saveTasksList(newTasksList);
+
     // tasksList[taskIndex] = {
     //   title: tasksList[taskIndex].title,
     //   completed: true,
-    // }
+    // }    
+    // console.log("click complete")
   }
 
   const onClickDeleteTask = (title) => {
@@ -161,7 +168,7 @@ function TodoProvider(props) {
     // `)
 
     // const newTasksList = [...tasksList];
-    // const taskIndex = tasksList.findIndex(task => task.title === title);
+    const taskIndex = tasksList.findIndex(task => task.title === title);
     // newTasksList[taskIndex].title = title.title;
     // newTasksList[taskIndex].body = body.body;
     // saveTasksList(newTasksList);
@@ -179,7 +186,10 @@ function TodoProvider(props) {
     setTaskBodyValue(taskToEdit[0].body);
 
     setOpenEditModal(true);
-    // console.log('TASK LIST', tasksList);
+
+    if(tasksList[taskIndex].completed == true) {
+      setOpenEditModal(false);
+    }
   }
 
   const onClickTaskUpdate = () => {
@@ -249,6 +259,7 @@ function TodoProvider(props) {
       setTaskBodyValue,
       onClickTaskUpdate,
       dateTime,
+      isDisabled,
     }}>
 
       {props.children}

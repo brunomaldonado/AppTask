@@ -27,13 +27,46 @@
 
 .button_addTask {
   position: relative;
-  bottom: 0.25rem;
+  /* bottom: 0.25rem; */
+}
+
+.button_addTask #addTodo {
+  position: absolute;
+  top: 35%;
+  left: 100%;
+  transform: rotateX(-50%);
+  background-color: whitesmoke;
+  padding: 1px 5px;
+  white-space: nowrap;
+  font-weight: bold;
+  border-radius: 4px;
+  line-height: 1.5;
+  font-size: 0.75rem;
+  color: #000;
+  font-family: "Poppins";
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+#addTodo::before {
+  content: '';
+  position: absolute;
+  left: -9px;
+  top: 25%;
+  border-top: 5px solid transparent;
+  border-right: 10px solid whitesmoke;
+  border-bottom: 5px solid transparent;
+}
+
+.button_addTask:hover #addTodo {
+  visibility: visible;
+  opacity: 1;
 }
 
 .newTasks {
   width: 40px;
   height: 40px;
-  font-size: 0.75rem;
   background-image: url('../../assets/more.png');
   background-size: cover;
   background-repeat: no-repeat;
@@ -41,11 +74,16 @@
   outline: none;
   cursor: pointer;
   box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.25);
-  /* background: inherit; */
   z-index: 99;
 }
 
 .newTasks:hover {
   transition: all 0.2s;
   transition: transform 1s;
+}
+
+@media (max-width: 768px) {
+  #addTodo {
+    display: none;
+  }
 }

@@ -2,6 +2,8 @@
   width: 100%;
   position: relative;
   display: flex;
+  align-items: center;
+  /* border: 1px solid red; */
 }
 
 .search {
@@ -14,7 +16,7 @@
   font-weight: 400;
   color: #1e1e1e;
   box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.25);
-  margin-bottom: 1.25rem;
+  /* margin-bottom: 1.25rem; */
   background: #121f3d;
   color: #9aa0a6;
   outline: none;
@@ -23,7 +25,6 @@
 
 .searchForm_button{
   position: absolute;
-  top: 5px;
   left: 1.5em;
   color: #9aa0a6;
   display: inline-block;
@@ -47,72 +48,22 @@
 
 .clear_keyboard {
   position: relative;
-  /* top: 5.5px; */
-  top: 7px;
-  right: 2rem;
   color: #9aa0a6;
-  display: flex;
+  right: 2rem;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
+  background-color: rgba(112, 117, 126, 0.25);
   outline: none;
   width: 22px;
   height: 22px;
   padding: 2px;
-  /* border: 0.5px solid #9aa0a6; */
-  background-color: rgba(112, 117, 126, 0.25);
   border-radius: 50%;
+  /* border: 0.5px solid #9aa0a6; */
   fill: currentColor;
   cursor: pointer;
   visibility: hidden;
 }
-
-/* .button_addTask {
-  position: relative;
-  bottom: 0.25rem;
-}
-
-.newTasks {
-  width: 40px;
-  height: 40px;
-  font-size: 0.75rem;
-  background-image: url('../../assets/more.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  border-radius: 50%;
-  outline: none;
-  cursor: pointer;
-  box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.25);
-  z-index: 99;
-}
-
-.newTasks:hover {
-  transition: all 0.2s;
-  transition: transform 1s;
-} */
-
-/* @media screen and (max-width: 475px) {
-  .search {
-    width: 320px;
-  } 
-  .clear_keyboard {
-    position: relative;
-    top: 7px;
-    right: 2rem;
-    color: #9aa0a6;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    outline: none;
-    width: 22px;
-    height: 22px;
-    padding: 2px; 
-    background-color: rgba(111, 221, 38, 0.25);
-    border-radius: 50%;
-    fill: currentColor;
-    cursor: pointer;
-    visibility: hidden;
-  }
-} */
 
 @media screen and (min-width: 476px) {
   .search {
